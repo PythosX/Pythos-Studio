@@ -1,3 +1,0 @@
-import {useEffect,useRef,useState} from 'react'
-export function useReveal(){const r=useRef();useEffect(()=>{const el=r.current;const o=new IntersectionObserver(([e])=>{if(e.isIntersecting){el.classList.add('in');o.disconnect()}},{threshold:.25});el&&o.observe(el);return()=>o.disconnect()},[]);return r}
-export function useProgress(){const r=useRef();const[p,setP]=useState(0);useEffect(()=>{let t;const f=()=>{cancelAnimationFrame(t);t=requestAnimationFrame(()=>{const b=r.current.getBoundingClientRect();setP(Math.min(1,Math.max(0,-b.top/(b.height-innerHeight))))})};f();addEventListener('scroll',f,{passive:true});return()=>{removeEventListener('scroll',f);cancelAnimationFrame(t)}},[]);return[r,p]}
