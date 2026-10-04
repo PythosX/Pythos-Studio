@@ -7,30 +7,42 @@ const o = {
 
 const hero = import.meta.glob(
   '../assets/hero-flow/*.{jpg,jpeg,png,webp,avif}',
-  o
+  {
+    eager: true,
+    query: '?url',
+    import: 'default'
+  }
 )
 
 const works = import.meta.glob(
   '../assets/works/*/*.{jpg,jpeg,png,webp,avif}',
-  o
+  {
+    eager: true,
+    query: '?url',
+    import: 'default'
+  }
 )
 
 const founder = import.meta.glob(
   '../assets/founder/*.{jpg,jpeg,png,webp,avif}',
-  o
+  {
+    eager: true,
+    query: '?url',
+    import: 'default'
+  }
 )
 
 export const heroImages =
   Object.entries(hero)
     .sort()
-    .map(([, v]) => v)
+    .map(([, value]) => value)
 
 export const worksFor = (slug) =>
   Object.entries(works)
-    .filter(([k]) => k.includes(`/works/${slug}/`))
+    .filter(([key]) => key.includes(`/works/${slug}/`))
     .sort()
-    .map(([, v]) => v)
+    .map(([, value]) => value)
 
-export const founderImg = (n) =>
+export const founderImg = (name) =>
   Object.entries(founder)
-    .find(([k]) => k.includes('/' + n + '.'))?.[1]
+    .find(([key]) => key.includes(`/${name}.`))?.[1]
