@@ -1,0 +1,5 @@
+import {useState} from 'react'
+import {founderImg} from '../lib/assets'
+import RevealText from '../components/RevealText'
+export default function Founder(){const[on,setOn]=useState(false);const c=founderImg('cyber'),h=founderImg('real')
+return <section id="about" className="sec founder"><small className="label">05 — ABOUT</small><RevealText lines={['THE PERSON','BEHIND PYTHOS.']}/><div className="fgrid"><button className={'portrait'+(on?' on':'')} onMouseEnter={()=>setOn(true)} onMouseLeave={()=>setOn(false)} onClick={()=>setOn(v=>!v)} aria-pressed={on} aria-label="Reveal real portrait" data-cursor="REVEAL"><div className="layer cyber" style={c?{backgroundImage:`url(${c})`}:undefined}/><div className="layer real" style={h?{backgroundImage:`url(${h})`}:undefined}/></button><div><h3 className="big">PYTHOSX</h3><small>FOUNDER / DEVELOPER / DESIGNER</small><p>Pythos Studio is built around a simple idea — great businesses deserve great digital experiences.</p><p>PythosX combines development, design, interaction, and technology to turn ideas and businesses into memorable online experiences.</p></div></div></section>}
