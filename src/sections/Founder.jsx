@@ -1,6 +1,0 @@
-import BackgroundVideo from '../components/BackgroundVideo'
-import {useState} from 'react'
-import {founderImg} from '../lib/assets'
-import RevealText from '../components/RevealText'
-export default function Founder(){const[on,setOn]=useState(false);const c=founderImg('cyber'),h=founderImg('real')
-return <section id="about" className="sec founder"><small className="label">05 — ABOUT</small><RevealText lines={['THE PERSON','BEHIND PYTHOS STUDIO']}/><div className="fgrid"><button className={'portrait'+(on?' on':'')} onMouseEnter={()=>setOn(true)} onMouseLeave={()=>setOn(false)} onClick={()=>setOn(v=>!v)} aria-pressed={on} aria-label="Reveal real portrait" data-cursor="REVEAL"><div className="layer cyber" style={c?{backgroundImage:`url(${c})`}:undefined}/><BackgroundVideo lazy src="/videos/pythos-founder-bg.mp4" opacity={.9} overlay={.15}/><div className="layer real" style={h?{backgroundImage:`url(${h})`}:undefined}/></button><div><h3 className="big">PythosX</h3><small>FOUNDER / DEVELOPER / DESIGNER</small><p>Pythos Studio is built around a simple idea — great businesses deserve great digital experiences.</p><p>PythosX combines development, design, interaction, and technology to turn ideas and businesses into memorable online experiences.</p></div></div></section>}
