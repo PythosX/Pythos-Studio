@@ -1,0 +1,1 @@
+export default function Img({src,alt='',className=''}){return src?<img className={'img '+className} src={src} alt={alt} loading="lazy" decoding="async"/>:<div className={'img ph '+className} role="img" aria-label={alt||'Placeholder'}/>}

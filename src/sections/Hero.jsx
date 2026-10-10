@@ -1,0 +1,3 @@
+import HeroSlideshow from '../components/HeroSlideshow'
+import MagneticButton from '../components/MagneticButton'
+export default function Hero(){return <section className="hero"><HeroSlideshow/><div className="hero-copy"><h1><span className="mask"><span>Your business</span></span><span className="mask"><span>deserves to be seen.</span></span></h1><p className="fade">Pythos Studio designs and builds websites that make restaurants, salons, cafés and local brands impossible to scroll past.</p><div className="ctas fade"><MagneticButton>Start a project</MagneticButton><a href="#work" className="link" data-cursor="EXPLORE">See our work ↓</a></div></div></section>}
